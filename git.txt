@@ -1,0 +1,50 @@
+
+git config --global user.name "YaFred"
+git config --global user.email yafred@users.noreply.github.com
+
+git clone --recursive https://github.com/ornicar/lila.git
+git clone https://github.com/ornicar/lila-ws.git
+
+
+# add a remote (after forking on github), list remote 
+git remote add remoteName https://github.com/user/repo.git
+git remote -v
+
+# create a branch locally, switch to it, list local branches
+git branch localBranchName
+git checkout localBranchName
+git branch
+
+# delete branch locally, remotely
+git branch -d localBranchName
+git push origin --delete remoteBranchName
+
+# show modified files
+git status
+
+# show diff between 2 branches
+git diff mybranch master -- myfile.cs
+
+# show last commit on current branch
+git log -1
+
+# clean workspace (but keep changes for later), list changes in store, apply last to local branch
+git stash
+git stash list
+git apply
+
+# delete one stash, all stashes
+git stash drop stashId
+git stash clear
+
+# update a clean workspace with remote using default, naming remote and branch
+git pull 
+git pull remoteName remoteBranchName
+
+# add a file for commit, commit it, get rid of change on one file
+git add filepath
+git commit -m "description"
+git checkout filepath
+
+# cache credentials (linux)
+git config --global credential.helper 'cache --timeout=3600'
