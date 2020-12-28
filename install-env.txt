@@ -93,3 +93,7 @@ sudo vi /etc/mongod.conf
 net:
     port: 27017
     bindIp: 0.0.0.0   #default value is 127.0.0.1
+
+**** lila prod ****
+./lila stage # makes a prod build
+./target/universal/stage/bin/lila -Dapplication.home=/home/vagrant/lila -Dhttp.port=9663 -Dconfig.file=/home/vagrant/lila/conf/application.conf -Dlogger.file=/home/vagrant/lila/conf/logback.xml -J-Xmx64M # starts it with 64MB

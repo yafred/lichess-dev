@@ -23,24 +23,13 @@ end
 
 ## Initial space
 ```
-vagrant@bionic64:~$ df -h
+vagrant@lichess:~$ df -h /dev/sda1; du -h --max-depth 1 /home/vagrant
 Filesystem      Size  Used Avail Use% Mounted on
-udev            5.9G     0  5.9G   0% /dev
-tmpfs           1.2G  604K  1.2G   1% /run
 /dev/sda1        20G  1.1G   19G   6% /
-tmpfs           5.9G     0  5.9G   0% /dev/shm
-tmpfs           5.0M     0  5.0M   0% /run/lock
-tmpfs           5.9G     0  5.9G   0% /sys/fs/cgroup
-vagrant         472G  113G  359G  24% /vagrant
-tmpfs           1.2G     0  1.2G   0% /run/user/1000
-vagrant@bionic64:~$ pwd
-/home/vagrant
-vagrant@bionic64:~$ du -h
-4.0K    ./.cache
-8.0K    ./.ssh
-4.0K    ./.gnupg/private-keys-v1.d
-8.0K    ./.gnupg
-40K     .
+4.0K    /home/vagrant/.cache
+8.0K    /home/vagrant/.ssh
+8.0K    /home/vagrant/.gnupg
+36K     /home/vagrant
 ```
 
 ## Prepare installations via apt-get
@@ -49,30 +38,19 @@ sudo apt-get update
 sudo apt-get upgrade
 ```
 ```
-vagrant@bionic64:~$ df -h
+vagrant@lichess:~$ df -h /dev/sda1; du -h --max-depth 1 /home/vagrant
 Filesystem      Size  Used Avail Use% Mounted on
-udev            5.9G     0  5.9G   0% /dev
-tmpfs           1.2G  612K  1.2G   1% /run
 /dev/sda1        20G  1.2G   19G   7% /
-tmpfs           5.9G     0  5.9G   0% /dev/shm
-tmpfs           5.0M     0  5.0M   0% /run/lock
-tmpfs           5.9G     0  5.9G   0% /sys/fs/cgroup
-vagrant         472G  114G  359G  24% /vagrant
-tmpfs           1.2G     0  1.2G   0% /run/user/1000
-vagrant@bionic64:~$ pwd
-/home/vagrant
-vagrant@bionic64:~$ du -k
-4       ./.cache
-8       ./.ssh
-4       ./.gnupg/private-keys-v1.d
-8       ./.gnupg
-40      .
+4.0K    /home/vagrant/.cache
+8.0K    /home/vagrant/.ssh
+8.0K    /home/vagrant/.gnupg
+36K     /home/vagrant
 ```
  
 ## Install openjdk
 ```
 sudo apt update
-sudo apt install default-jdk
+sudo apt install -y default-jdk
 java -version
 ```
 ```
@@ -82,50 +60,28 @@ OpenJDK Runtime Environment (build 11.0.9.1+1-Ubuntu-0ubuntu1.18.04)
 OpenJDK 64-Bit Server VM (build 11.0.9.1+1-Ubuntu-0ubuntu1.18.04, mixed mode, sharing)
 ```
 ```
-vagrant@bionic64:~$ df -h
+vagrant@lichess:~$ df -h /dev/sda1; du -h --max-depth 1 /home/vagrant
 Filesystem      Size  Used Avail Use% Mounted on
-udev            5.9G     0  5.9G   0% /dev
-tmpfs           1.2G  612K  1.2G   1% /run
 /dev/sda1        20G  1.8G   18G   9% /
-tmpfs           5.9G     0  5.9G   0% /dev/shm
-tmpfs           5.0M     0  5.0M   0% /run/lock
-tmpfs           5.9G     0  5.9G   0% /sys/fs/cgroup
-vagrant         472G  115G  358G  25% /vagrant
-tmpfs           1.2G     0  1.2G   0% /run/user/1000
-vagrant@bionic64:~$ pwd
-/home/vagrant
-vagrant@bionic64:~$ du -h
-4.0K    ./.cache
-8.0K    ./.ssh
-4.0K    ./.gnupg/private-keys-v1.d
-8.0K    ./.gnupg
-40K     .
+4.0K    /home/vagrant/.cache
+8.0K    /home/vagrant/.ssh
+8.0K    /home/vagrant/.gnupg
+36K     /home/vagrant
 ```
 
 ## Install monitoring tool
 ```
-sudo apt-get install glances
+sudo apt-get update
+sudo apt-get install -y glances
 ```
 ```
-vagrant@bionic64:~$ df -h
+vagrant@lichess:~$ df -h /dev/sda1; du -h --max-depth 1 /home/vagrant
 Filesystem      Size  Used Avail Use% Mounted on
-udev            5.9G     0  5.9G   0% /dev
-tmpfs           1.2G  620K  1.2G   1% /run
 /dev/sda1        20G  1.9G   18G  10% /
-tmpfs           5.9G     0  5.9G   0% /dev/shm
-tmpfs           5.0M     0  5.0M   0% /run/lock
-tmpfs           5.9G     0  5.9G   0% /sys/fs/cgroup
-vagrant         472G  115G  358G  25% /vagrant
-tmpfs           1.2G     0  1.2G   0% /run/user/1000
-vagrant@bionic64:~$ pwd
-/home/vagrant
-vagrant@bionic64:~$ du -h
-4.0K    ./.cache
-8.0K    ./.ssh
-4.0K    ./.gnupg/private-keys-v1.d
-8.0K    ./.gnupg
-40K     .
-vagrant@bionic64:~$
+4.0K    /home/vagrant/.cache
+8.0K    /home/vagrant/.ssh
+8.0K    /home/vagrant/.gnupg
+36K     /home/vagrant
 ```
 
 ## Install Node.js using nvm (https://github.com/nvm-sh/nvm)
@@ -136,24 +92,14 @@ nvm install 14.15.1
 node --version
 ```
 ```
-vagrant@bionic64:~$ df -h
+vagrant@lichess:~$ df -h /dev/sda1; du -h --max-depth 1 /home/vagrant
 Filesystem      Size  Used Avail Use% Mounted on
-udev            5.9G     0  5.9G   0% /dev
-tmpfs           1.2G  620K  1.2G   1% /run
 /dev/sda1        20G  2.1G   18G  11% /
-tmpfs           5.9G     0  5.9G   0% /dev/shm
-tmpfs           5.0M     0  5.0M   0% /run/lock
-tmpfs           5.9G     0  5.9G   0% /sys/fs/cgroup
-vagrant         472G  115G  357G  25% /vagrant
-tmpfs           1.2G     0  1.2G   0% /run/user/1000
-vagrant@bionic64:~$ pwd
-/home/vagrant
-vagrant@bionic64:~$ du -h --max-depth=1
-135M    ./.nvm
-4.0K    ./.cache
-8.0K    ./.ssh
-8.0K    ./.gnupg
-135M    .
+135M    /home/vagrant/.nvm
+4.0K    /home/vagrant/.cache
+8.0K    /home/vagrant/.ssh
+8.0K    /home/vagrant/.gnupg
+135M    /home/vagrant
 ```
 
 ## Install yarn
@@ -164,24 +110,14 @@ sudo apt-get update
 sudo apt-get install -y yarn
 ```
 ```
-vagrant@bionic64:~$ df -h
+vagrant@lichess:~$ df -h /dev/sda1; du -h --max-depth 1 /home/vagrant
 Filesystem      Size  Used Avail Use% Mounted on
-udev            5.9G     0  5.9G   0% /dev
-tmpfs           1.2G  620K  1.2G   1% /run
 /dev/sda1        20G  2.1G   18G  11% /
-tmpfs           5.9G     0  5.9G   0% /dev/shm
-tmpfs           5.0M     0  5.0M   0% /run/lock
-tmpfs           5.9G     0  5.9G   0% /sys/fs/cgroup
-vagrant         472G  115G  357G  25% /vagrant
-tmpfs           1.2G     0  1.2G   0% /run/user/1000
-vagrant@bionic64:~$ pwd
-/home/vagrant
-vagrant@bionic64:~$ du -h --max-depth=1
-135M    ./.nvm
-4.0K    ./.cache
-8.0K    ./.ssh
-8.0K    ./.gnupg
-135M    .
+135M    /home/vagrant/.nvm
+4.0K    /home/vagrant/.cache
+8.0K    /home/vagrant/.ssh
+8.0K    /home/vagrant/.gnupg
+135M    /home/vagrant
 ```
 
 ## Install sbt
@@ -192,51 +128,31 @@ sudo apt-get update
 sudo apt-get install -y sbt
 ```
 ```
-vagrant@bionic64:~$ df -h
+vagrant@lichess:~$ df -h /dev/sda1; du -h --max-depth 1 /home/vagrant
 Filesystem      Size  Used Avail Use% Mounted on
-udev            5.9G     0  5.9G   0% /dev
-tmpfs           1.2G  620K  1.2G   1% /run
 /dev/sda1        20G  2.1G   18G  11% /
-tmpfs           5.9G     0  5.9G   0% /dev/shm
-tmpfs           5.0M     0  5.0M   0% /run/lock
-tmpfs           5.9G     0  5.9G   0% /sys/fs/cgroup
-vagrant         472G  115G  357G  25% /vagrant
-tmpfs           1.2G     0  1.2G   0% /run/user/1000
-vagrant@bionic64:~$ pwd
-/home/vagrant
-vagrant@bionic64:~$ du -h --max-depth=1
-135M    ./.nvm
-4.0K    ./.cache
-8.0K    ./.ssh
-8.0K    ./.gnupg
-135M    .
+135M    /home/vagrant/.nvm
+4.0K    /home/vagrant/.cache
+8.0K    /home/vagrant/.ssh
+8.0K    /home/vagrant/.gnupg
+135M    /home/vagrant
 ```
 
 ## Install parallel
 ```
-sudo apt-get update -y
+sudo apt-get update
 sudo apt-get install -y parallel
 parallel --citation
 ```
 ```
-vagrant@bionic64:~$ df -h
+vagrant@lichess:~$ df -h /dev/sda1; du -h --max-depth 1 /home/vagrant
 Filesystem      Size  Used Avail Use% Mounted on
-udev            5.9G     0  5.9G   0% /dev
-tmpfs           1.2G  620K  1.2G   1% /run
 /dev/sda1        20G  2.1G   18G  11% /
-tmpfs           5.9G     0  5.9G   0% /dev/shm
-tmpfs           5.0M     0  5.0M   0% /run/lock
-tmpfs           5.9G     0  5.9G   0% /sys/fs/cgroup
-vagrant         472G  115G  357G  25% /vagrant
-tmpfs           1.2G     0  1.2G   0% /run/user/1000
-vagrant@bionic64:~$ pwd
-/home/vagrant
-vagrant@bionic64:~$ du -h --max-depth=1
-135M    ./.nvm
-4.0K    ./.cache
-8.0K    ./.ssh
-8.0K    ./.gnupg
-135M    .
+135M    /home/vagrant/.nvm
+4.0K    /home/vagrant/.cache
+8.0K    /home/vagrant/.ssh
+8.0K    /home/vagrant/.gnupg
+135M    /home/vagrant
 ```
 
 ## Install MongoDB
@@ -248,24 +164,14 @@ sudo apt-get install -y mongodb-org
 sudo systemctl start mongod
 ```
 ```
-vagrant@bionic64:~$ df -h
+vagrant@lichess:~$ df -h /dev/sda1; du -h --max-depth 1 /home/vagrant
 Filesystem      Size  Used Avail Use% Mounted on
-udev            5.9G     0  5.9G   0% /dev
-tmpfs           1.2G  620K  1.2G   1% /run
-/dev/sda1        20G  2.6G   17G  14% /
-tmpfs           5.9G     0  5.9G   0% /dev/shm
-tmpfs           5.0M     0  5.0M   0% /run/lock
-tmpfs           5.9G     0  5.9G   0% /sys/fs/cgroup
-vagrant         472G  116G  357G  25% /vagrant
-tmpfs           1.2G     0  1.2G   0% /run/user/1000
-vagrant@bionic64:~$ pwd
-/home/vagrant
-vagrant@bionic64:~$ du -h --max-depth=1
-135M    ./.nvm
-4.0K    ./.cache
-8.0K    ./.ssh
-8.0K    ./.gnupg
-135M    .
+/dev/sda1        20G  2.9G   17G  15% /
+135M    /home/vagrant/.nvm
+4.0K    /home/vagrant/.cache
+8.0K    /home/vagrant/.ssh
+8.0K    /home/vagrant/.gnupg
+135M    /home/vagrant
 ```
 
 ## Allow remote connections (to use Mongo Compass)
@@ -283,24 +189,14 @@ sudo apt-get update
 sudo apt-get install -y redis-server
 ```
 ```
-vagrant@bionic64:~$ df -h
+vagrant@lichess:~$ df -h /dev/sda1; du -h --max-depth 1 /home/vagrant
 Filesystem      Size  Used Avail Use% Mounted on
-udev            5.9G     0  5.9G   0% /dev
-tmpfs           1.2G  624K  1.2G   1% /run
-/dev/sda1        20G  2.6G   17G  14% /
-tmpfs           5.9G     0  5.9G   0% /dev/shm
-tmpfs           5.0M     0  5.0M   0% /run/lock
-tmpfs           5.9G     0  5.9G   0% /sys/fs/cgroup
-vagrant         472G  116G  357G  25% /vagrant
-tmpfs           1.2G     0  1.2G   0% /run/user/1000
-vagrant@bionic64:~$ pwd
-/home/vagrant
-vagrant@bionic64:~$ du -h --max-depth=1
-135M    ./.nvm
-4.0K    ./.cache
-8.0K    ./.ssh
-8.0K    ./.gnupg
-135M    .
+/dev/sda1        20G  2.9G   17G  15% /
+135M    /home/vagrant/.nvm
+4.0K    /home/vagrant/.cache
+8.0K    /home/vagrant/.ssh
+8.0K    /home/vagrant/.gnupg
+135M    /home/vagrant
 ```
 
 ## Clone lila-ws
@@ -308,25 +204,15 @@ vagrant@bionic64:~$ du -h --max-depth=1
 git clone https://github.com/ornicar/lila-ws.git
 ```
 ```
-vagrant@bionic64:~$ df -h
+vagrant@lichess:~$ df -h /dev/sda1; du -h --max-depth 1 /home/vagrant
 Filesystem      Size  Used Avail Use% Mounted on
-udev            5.9G     0  5.9G   0% /dev
-tmpfs           1.2G  624K  1.2G   1% /run
-/dev/sda1        20G  2.6G   17G  14% /
-tmpfs           5.9G     0  5.9G   0% /dev/shm
-tmpfs           5.0M     0  5.0M   0% /run/lock
-tmpfs           5.9G     0  5.9G   0% /sys/fs/cgroup
-vagrant         472G  116G  357G  25% /vagrant
-tmpfs           1.2G     0  1.2G   0% /run/user/1000
-vagrant@bionic64:~$ pwd
-/home/vagrant
-vagrant@bionic64:~$ du -h --max-depth=1
-1.6M    ./lila-ws
-135M    ./.nvm
-4.0K    ./.cache
-8.0K    ./.ssh
-8.0K    ./.gnupg
-137M    .
+/dev/sda1        20G  2.9G   17G  15% /
+1.6M    /home/vagrant/lila-ws
+135M    /home/vagrant/.nvm
+4.0K    /home/vagrant/.cache
+8.0K    /home/vagrant/.ssh
+8.0K    /home/vagrant/.gnupg
+137M    /home/vagrant
 ```
 
 ## Clone lila
@@ -334,26 +220,16 @@ vagrant@bionic64:~$ du -h --max-depth=1
 git clone --recursive https://github.com/ornicar/lila.git
 ```
 ```
-vagrant@bionic64:~$ df -h
+vagrant@lichess:~$ df -h /dev/sda1; du -h --max-depth 1 /home/vagrant
 Filesystem      Size  Used Avail Use% Mounted on
-udev            5.9G     0  5.9G   0% /dev
-tmpfs           1.2G  624K  1.2G   1% /run
-/dev/sda1        20G  2.9G   17G  15% /
-tmpfs           5.9G     0  5.9G   0% /dev/shm
-tmpfs           5.0M     0  5.0M   0% /run/lock
-tmpfs           5.9G     0  5.9G   0% /sys/fs/cgroup
-vagrant         472G  116G  356G  25% /vagrant
-tmpfs           1.2G     0  1.2G   0% /run/user/1000
-vagrant@bionic64:~$ pwd
-/home/vagrant
-vagrant@bionic64:~$ du -h --max-depth=1
-1.6M    ./lila-ws
-135M    ./.nvm
-360M    ./lila
-4.0K    ./.cache
-8.0K    ./.ssh
-8.0K    ./.gnupg
-497M    .
+/dev/sda1        20G  3.2G   17G  17% /
+1.6M    /home/vagrant/lila-ws
+135M    /home/vagrant/.nvm
+360M    /home/vagrant/lila
+4.0K    /home/vagrant/.cache
+8.0K    /home/vagrant/.ssh
+8.0K    /home/vagrant/.gnupg
+497M    /home/vagrant
 ```
 
 ## Build and start lila-ws (includes getting org.scala-sbt sbt 1.4.6)
@@ -362,28 +238,18 @@ cd lila-ws
 sbt run
 ```
 ```
-vagrant@bionic64:~$ df -h
+vagrant@lichess:~$ df -h /dev/sda1; du -h --max-depth 1 /home/vagrant
 Filesystem      Size  Used Avail Use% Mounted on
-udev            5.9G     0  5.9G   0% /dev
-tmpfs           1.2G  640K  1.2G   1% /run
-/dev/sda1        20G  3.2G   17G  17% /
-tmpfs           5.9G     0  5.9G   0% /dev/shm
-tmpfs           5.0M     0  5.0M   0% /run/lock
-tmpfs           5.9G     0  5.9G   0% /sys/fs/cgroup
-vagrant         472G  117G  356G  25% /vagrant
-tmpfs           1.2G     0  1.2G   0% /run/user/1000
-vagrant@bionic64:~$ pwd
-/home/vagrant
-vagrant@bionic64:~$ du -h --max-depth 1
-58M     ./lila-ws
-135M    ./.nvm
-360M    ./lila
-93M     ./.cache
-8.0K    ./.ssh
-8.0K    ./.gnupg
-57M     ./.ivy2
-123M    ./.sbt
-825M    .
+/dev/sda1        20G  3.5G   16G  19% /
+58M     /home/vagrant/lila-ws
+135M    /home/vagrant/.nvm
+360M    /home/vagrant/lila
+93M     /home/vagrant/.cache
+8.0K    /home/vagrant/.ssh
+8.0K    /home/vagrant/.gnupg
+57M     /home/vagrant/.ivy2
+123M    /home/vagrant/.sbt
+825M    /home/vagrant
 ```
 
 ## Build lila ui
@@ -392,30 +258,20 @@ cd lila
 ./ui/build
 ```
 ```
-vagrant@bionic64:~/lila$ df -h
+vagrant@lichess:~$ df -h /dev/sda1; du -h --max-depth 1 /home/vagrant
 Filesystem      Size  Used Avail Use% Mounted on
-udev            5.9G     0  5.9G   0% /dev
-tmpfs           1.2G  640K  1.2G   1% /run
-/dev/sda1        20G  3.7G   16G  19% /
-tmpfs           5.9G     0  5.9G   0% /dev/shm
-tmpfs           5.0M     0  5.0M   0% /run/lock
-tmpfs           5.9G     0  5.9G   0% /sys/fs/cgroup
-vagrant         472G  117G  355G  25% /vagrant
-tmpfs           1.2G     0  1.2G   0% /run/user/1000
-vagrant@bionic64:~$ pwd
-/home/vagrant
-vagrant@bionic64:~$ du -h --max-depth 1
-12K     ./.parallel
-58M     ./lila-ws
-135M    ./.nvm
-598M    ./lila
-8.0K    ./.yarn
-340M    ./.cache
-8.0K    ./.ssh
-8.0K    ./.gnupg
-57M     ./.ivy2
-123M    ./.sbt
-1.3G    .
+/dev/sda1        20G  4.0G   16G  21% /
+12K     /home/vagrant/.parallel
+58M     /home/vagrant/lila-ws
+135M    /home/vagrant/.nvm
+596M    /home/vagrant/lila
+8.0K    /home/vagrant/.yarn
+318M    /home/vagrant/.cache
+8.0K    /home/vagrant/.ssh
+8.0K    /home/vagrant/.gnupg
+57M     /home/vagrant/.ivy2
+123M    /home/vagrant/.sbt
+1.3G    /home/vagrant
 ```
 
 ## Build and start lila
@@ -425,95 +281,96 @@ cd lila
 run
 ```
 ```
-vagrant@bionic64:~$ df -h
+vagrant@lichess:~$ df -h /dev/sda1; du -h --max-depth 1 /home/vagrant
 Filesystem      Size  Used Avail Use% Mounted on
-udev            5.9G     0  5.9G   0% /dev
-tmpfs           1.2G  644K  1.2G   1% /run
 /dev/sda1        20G  4.4G   15G  23% /
-tmpfs           5.9G     0  5.9G   0% /dev/shm
-tmpfs           5.0M     0  5.0M   0% /run/lock
-tmpfs           5.9G     0  5.9G   0% /sys/fs/cgroup
-vagrant         472G  117G  355G  25% /vagrant
-tmpfs           1.2G     0  1.2G   0% /run/user/1000
-vagrant@bionic64:~$ pwd
-/home/vagrant
-vagrant@bionic64:~$ du -h --max-depth 1
-12K     ./.parallel
-58M     ./lila-ws
-135M    ./.nvm
-913M    ./lila
-8.0K    ./.yarn
-462M    ./.cache
-8.0K    ./.ssh
-8.0K    ./.gnupg
-57M     ./.ivy2
-124M    ./.sbt
-1.8G    .
+12K     /home/vagrant/.parallel
+58M     /home/vagrant/lila-ws
+135M    /home/vagrant/.nvm
+915M    /home/vagrant/lila
+8.0K    /home/vagrant/.yarn
+465M    /home/vagrant/.cache
+8.0K    /home/vagrant/.ssh
+8.0K    /home/vagrant/.gnupg
+57M     /home/vagrant/.ivy2
+124M    /home/vagrant/.sbt
+1.8G    /home/vagrant
 ```
 
 ## Remote access with vscode
-```
-vagrant@bionic64:~$ df -h
-Filesystem      Size  Used Avail Use% Mounted on
-udev            5.9G     0  5.9G   0% /dev
-tmpfs           1.2G  652K  1.2G   1% /run
-/dev/sda1        20G  4.5G   15G  24% /
-tmpfs           5.9G     0  5.9G   0% /dev/shm
-tmpfs           5.0M     0  5.0M   0% /run/lock
-tmpfs           5.9G     0  5.9G   0% /sys/fs/cgroup
-vagrant         472G  117G  355G  25% /vagrant
-tmpfs           1.2G     0  1.2G   0% /run/user/1000
-vagrant@bionic64:~$ pwd
-/home/vagrant
-vagrant@bionic64:~$ du -h --max-depth 1
-12K     ./.parallel
-58M     ./lila-ws
-135M    ./.nvm
-913M    ./lila
-8.0K    ./.yarn
-462M    ./.cache
-104M    ./.vscode-server
-8.0K    ./.ssh
-8.0K    ./.gnupg
-57M     ./.ivy2
-124M    ./.sbt
-1.9G    .
-```
 
-## Open lila folder with vscode
+### Stop lila and lila-ws
 
 ### Increase this parm first
 ```
 echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.conf
 sudo sysctl -p
 ```
-### Download metals (vscode) and import build (new sbt workspace detected) ... be patient
+
+### Connect to remote host
 ```
-vagrant@bionic64:~$ df -h
+vagrant@lichess:~$ df -h /dev/sda1; du -h --max-depth 1 /home/vagrant
 Filesystem      Size  Used Avail Use% Mounted on
-udev            5.9G     0  5.9G   0% /dev
-tmpfs           1.2G  640K  1.2G   1% /run
-/dev/sda1        20G  5.3G   15G  27% /
-tmpfs           5.9G     0  5.9G   0% /dev/shm
-tmpfs           5.0M     0  5.0M   0% /run/lock
-tmpfs           5.9G     0  5.9G   0% /sys/fs/cgroup
-vagrant         472G  118G  354G  25% /vagrant
-tmpfs           1.2G     0  1.2G   0% /run/user/1000
-vagrant@bionic64:~$ pwd
-/home/vagrant
-vagrant@bionic64:~$ du -h --max-depth 1
-12K     ./.parallel
-8.0K    ./.config
-58M     ./lila-ws
-135M    ./.nvm
-1.3G    ./lila
-8.0K    ./.yarn
-16K     ./.local
-837M    ./.cache
-121M    ./.vscode-server
-8.0K    ./.ssh
-8.0K    ./.gnupg
-57M     ./.ivy2
-124M    ./.sbt
-2.6G    .
+/dev/sda1        20G  4.5G   15G  24% /
+12K     /home/vagrant/.parallel
+58M     /home/vagrant/lila-ws
+135M    /home/vagrant/.nvm
+916M    /home/vagrant/lila
+8.0K    /home/vagrant/.yarn
+465M    /home/vagrant/.cache
+104M    /home/vagrant/.vscode-server
+8.0K    /home/vagrant/.ssh
+8.0K    /home/vagrant/.gnupg
+57M     /home/vagrant/.ivy2
+124M    /home/vagrant/.sbt
+1.9G    /home/vagrant
 ```
+
+### Download metals (vscode) and ...
+```
+vagrant@lichess:~$ df -h /dev/sda1; du -h --max-depth 1 /home/vagrant
+Filesystem      Size  Used Avail Use% Mounted on
+/dev/sda1        20G  4.7G   15G  24% /
+12K     /home/vagrant/.parallel
+58M     /home/vagrant/lila-ws
+135M    /home/vagrant/.nvm
+916M    /home/vagrant/lila
+8.0K    /home/vagrant/.yarn
+552M    /home/vagrant/.cache
+121M    /home/vagrant/.vscode-server
+8.0K    /home/vagrant/.ssh
+8.0K    /home/vagrant/.gnupg
+57M     /home/vagrant/.ivy2
+124M    /home/vagrant/.sbt
+2.0G    /home/vagrant
+```
+
+### ... import build (new sbt workspace detected) ... be patient 
+```
+vagrant@lichess:~$ df -h /dev/sda1; du -h --max-depth 1 /home/vagrant
+Filesystem      Size  Used Avail Use% Mounted on
+/dev/sda1        20G  5.0G   15G  26% /
+12K     /home/vagrant/.parallel
+8.0K    /home/vagrant/.config
+58M     /home/vagrant/lila-ws
+135M    /home/vagrant/.nvm
+997M    /home/vagrant/lila
+8.0K    /home/vagrant/.yarn
+16K     /home/vagrant/.local
+826M    /home/vagrant/.cache
+121M    /home/vagrant/.vscode-server
+8.0K    /home/vagrant/.ssh
+8.0K    /home/vagrant/.gnupg
+57M     /home/vagrant/.ivy2
+124M    /home/vagrant/.sbt
+2.3G    /home/vagrant
+```
+
+## Useful .gitignore
+```
+.bloop
+.bsp
+.vscode
+.metals
+```
+
