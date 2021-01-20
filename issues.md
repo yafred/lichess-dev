@@ -14,6 +14,7 @@
   * [Feature request: Team match](https://github.com/ornicar/lila/issues/6373)
   * [Filter challenges by "Classroom" or "Team"](https://github.com/ornicar/lila/issues/6355)
   * [Feature request: Message all members, "except" then choose](https://github.com/ornicar/lila/issues/6342)
+  * [Team leaders being able to kick creator](https://github.com/ornicar/lila/issues/7956)
   
 
 ### Classes
@@ -24,6 +25,7 @@
   * [sort appeals by mod reply date](https://github.com/ornicar/lila/issues/7564)
 
 ### Users
+  * [Option to not show friend activity on the start page](https://github.com/ornicar/lila/issues/7894)
   * [List upcoming tournaments for which the user has registered (UX)](https://github.com/ornicar/lila/issues/7787)
 
 ### UI

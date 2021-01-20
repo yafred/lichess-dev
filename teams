@@ -1,0 +1,37 @@
+Fred1 creates a team (1 member)
+Fred2 joins the team (2 members)
+Fred3 joins the team (3 members)
+
+Fred1 promotes Fred2 as team leader (ok)
+Fred2 promotes Fred3 as team leader (ok)
+
+Fred3 demotes Fred2 (ok)
+Fred3 kicks Fred2 out (ok) (2 members)
+
+Fred3 demotes Fred1 (not possible - No error message)
+Fred1 demotes himself (ok)
+Fred1 leaves the team (ok)(1 member)
+
+Note: Fred1 still in team database (field createdBy) but has no access 
+
+
+
+
+
+
+Fred1 creates a team (1 member)
+Fred2 joins the team (2 members)
+Fred1 promotes Fred2 as team leader (ok)
+Fred2 kicks Fred1 out (ok)(1 member)  
+    Team is not listed is Fred1's 'My teams' any more (/team/me)
+    Fred1 can still access team leader (/team/team-by-fred1)
+
+Fred2 demotes himself (not possible - No error message)
+Fred1 kicks Fred2 out (ok)(0 members)
+    However, both Fred1 and Fred2 can access team leader (/team/team-by-fred1)
+Fred1 demotes Fred2 (not possible - No error message)
+
+Fred2 joins the team (1 member)
+Fred1 demotes Fred2  (not possible - No error message)
+
+Fred1 demotes himself (ok)
