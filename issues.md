@@ -1,3 +1,6 @@
+### I18n
+  * [Hyperlink displays wrong text](https://github.com/ornicar/lila/issues/7962)
+
 ### Teams
   * [Leaderboards on Team Pages](https://github.com/ornicar/lila/issues/7737)
   * [Allow to share tournaments](https://github.com/ornicar/lila/issues/7714)
@@ -16,6 +19,9 @@
   * [Feature request: Message all members, "except" then choose](https://github.com/ornicar/lila/issues/6342)
   * [Team leaders being able to kick creator](https://github.com/ornicar/lila/issues/7956)
   
+
+### Tornaments
+  * [Get ‘Incorrect Password’ message when password to join tournament is wrong.](https://github.com/ornicar/lila/issues/7966)
 
 ### Classes
   * [Allow Teachers to add Students to Teams](https://github.com/ornicar/lila/issues/6663)

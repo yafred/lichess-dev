@@ -31,7 +31,7 @@ git log -1
 # clean workspace (but keep changes for later), list changes in store, apply last to local branch
 git stash
 git stash list
-git apply
+git stash apply
 
 # delete one stash, all stashes
 git stash drop stashId

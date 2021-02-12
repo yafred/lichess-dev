@@ -144,7 +144,7 @@ Filesystem      Size  Used Avail Use% Mounted on
 ```
 sudo apt-get update
 sudo apt-get install -y parallel
-parallel --citation
+mkdir -p ~/.parallel && touch ~/.parallel/will-cite
 ```
 ```
 vagrant@lichess:~$ df -h /dev/sda1; du -h --max-depth 1 /home/vagrant
