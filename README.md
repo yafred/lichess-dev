@@ -234,7 +234,7 @@ Filesystem      Size  Used Avail Use% Mounted on
 497M    /home/vagrant
 ```
 
-## Build and start lila-ws (includes getting org.scala-sbt sbt 1.4.6)
+## Build and start lila-ws (includes getting org.scala-sbt)
 ```
 cd lila-ws
 sbt run
