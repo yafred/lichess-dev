@@ -1,2 +1,3 @@
 - 'special' teacher (supervisor) who will always see the classes he/she is supervising
+- use completions when adding teachers (should have teacher role, should not remove the creator) ... this will solve the issue above
 - cros class student list with search and sort (display as a list or a tree class/student)
