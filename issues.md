@@ -8,4 +8,4 @@
   * [Remove rel=noopener where target=_blank](https://github.com/lichess-org/lila/issues/16807)
 
 ### UI/UX
-  * [Enhancement: Improved friend UI/visibility](https://github.com/lichess-org/lila/issues/11824)
+  * [Make the "friends online" button be an icon next to the search button on the header](https://github.com/lichess-org/lila/issues/16752)
