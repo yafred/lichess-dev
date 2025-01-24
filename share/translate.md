@@ -1,3 +1,5 @@
+How to use i18n process
+
 * Create a git branch
 * Build and run
     * ui/build
