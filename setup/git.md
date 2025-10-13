@@ -48,3 +48,7 @@ git checkout filepath
 
 # cache credentials (linux)
 git config --global credential.helper 'cache --timeout=3600'
+
+# try a commit in history
+git fetch --unshallow
+git checkout "$(git rev-list -1 --before="30 days ago" master)"
