@@ -20,4 +20,5 @@
 * File > Open Folder (/workspaces/lila-docker/repos/lila)
 * Create a new branch
 * Create a new remote
+* git remote add yafred https://yafred:TOKEN@github.com/yafred/lila
 
